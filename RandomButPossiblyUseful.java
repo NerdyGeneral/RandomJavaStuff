@@ -15,6 +15,10 @@ public class RandomButPossiblyUseful
 {
 
 
+
+   //----------------------------------------------------
+
+
    public static String reverseCap(String text) // reverseCap inverts the capitalization of a word EX: (Bob --> bOB) 
 
    {
@@ -45,6 +49,8 @@ public class RandomButPossiblyUseful
    }
    
    
+   //----------------------------------------------------
+   
    
    public int searchArray(int[] arrayToSearch, int intToFind) //Searches an Array to find a specific int, returns index of int if found else returns -1
    {
@@ -59,7 +65,7 @@ public class RandomButPossiblyUseful
     return -1;
    }
    
-   
+   //----------------------------------------------------
    
    public int maxIndex(int[] arr) //Will return the index of the number that has the largest value in the string 
    {
@@ -77,7 +83,47 @@ public class RandomButPossiblyUseful
             
       }
       return index;
-    }
+   }
+    
+   //----------------------------------------------------
+    
+    
+   public int sumArray(int[] arrayToSum) //Will sum an Array
+   {
+      int total = 0;
+    
+      for(int i = 0 ; i < arrayToSum.length ; i++)
+      {
+         total = total + arrayToSum[i];
+      }
+      
+      return total;
+   }
+   
+   
+   //----------------------------------------------------
+
+   
+   public int sumEvens(int[] arrayToSum) //Returns the Sum of even numbers only
+   {
+      int total = 0;
+    
+      for( int i = 0 ; i < arrayToSum.length ; i++)
+      {
+         if (arrayToSum[i] % 2 == 0)
+         {
+            
+            total = total + arrayToSum[i];
+            
+         }
+      }
+      return total;
+   }
+   
+   //----------------------------------------------------
+
+
+
 
 
 
