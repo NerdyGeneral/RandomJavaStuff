@@ -10,13 +10,27 @@ import java.io.*;
 
 
 
+/* Contents
+1). Reverse Capitalization
+2). Search Int Array
+3). Maximum Int value in Array
+4). Sum an Int Array
+5). Sum only even in an Int Array
+6). Return true if every elemement in array is odd
+7). Takes an int array and turns it into a string
+8). Reverse a String Array
+9). 
+
+
+*/
+
 
 public class RandomButPossiblyUseful
 {
 
 
 
-   //----------------------------------------------------
+   // 1).  ----------------------------------------------------
 
 
    public static String reverseCap(String text) // reverseCap inverts the capitalization of a word EX: (Bob --> bOB) 
@@ -49,7 +63,7 @@ public class RandomButPossiblyUseful
    }
    
    
-   //----------------------------------------------------
+   // 2). ----------------------------------------------------
    
    
    public int searchArray(int[] arrayToSearch, int intToFind) //Searches an Array to find a specific int, returns index of int if found else returns -1
@@ -65,9 +79,9 @@ public class RandomButPossiblyUseful
     return -1;
    }
    
-   //----------------------------------------------------
+   // 3). ----------------------------------------------------
    
-   public int maxIndex(int[] arr) //Will return the index of the number that has the largest value in the string 
+   public int maxIndex(int[] arr) //Will return the index of the number that has the largest value in the array 
    {
       int temp = arr[0]; //holds begining value
       int index = 0; // will hold value of index of largest number
@@ -85,7 +99,7 @@ public class RandomButPossiblyUseful
       return index;
    }
     
-   //----------------------------------------------------
+   // 4). ----------------------------------------------------
     
     
    public int sumArray(int[] arrayToSum) //Will sum an Array
@@ -101,7 +115,7 @@ public class RandomButPossiblyUseful
    }
    
    
-   //----------------------------------------------------
+   // 5). ----------------------------------------------------
 
    
    public int sumEvens(int[] arrayToSum) //Returns the Sum of even numbers only
@@ -120,7 +134,71 @@ public class RandomButPossiblyUseful
       return total;
    }
    
-   //----------------------------------------------------
+   // 6). ----------------------------------------------------
+
+   public boolean oddArray(int[] arr) //Will return true if every element in array is odd 
+   {
+      boolean isOdd = true;
+    
+      for( int i = 0 ; i < arr.length ; i++)
+      {
+         if (arr[i] % 2 == 0)
+         {
+            
+            isOdd = false;
+            
+         }
+      }
+    
+      return isOdd;
+   }
+
+   // 7).----------------------------------------------------
+
+   public String intArrayToString(int[] intArray) //Will take an array of int {1,4,2,3} and return them as a string [1, 2, 3, 4]
+   {
+    
+      String holder = "[";
+      int numbo = 0;
+    
+      for( int i = 0 ; i < intArray.length ; i++)
+      {
+         numbo = intArray[i];
+         holder = holder + numbo + ", ";
+      }
+    
+      if( holder.length() > 1) // Yes I could have just made an if statement to stop comma placement in the for loop
+      {
+         holder = holder.substring(0, holder.length() - 2);
+      }
+    
+      holder = holder + "]";
+    
+    
+      return holder;
+    }
+
+   // 8).----------------------------------------------------
+   
+   public String[] reverse(String[] arr) //Returns a reversed String array {bob, ross} --> {ross, bob}
+   {
+      
+      String[] holdTwo = new String[arr.length];
+      int current = 0;
+    
+      for( int i = arr.length - 1 ; i > 0  ; i--)
+      {  
+         holdTwo[current] = arr[i];
+         current++;
+      }
+      
+      
+      holdTwo[holdTwo.length-1] = arr[0];
+    
+      return holdTwo;    
+   }
+
+   // 9).----------------------------------------------------
 
 
 
