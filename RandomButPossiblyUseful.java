@@ -11,15 +11,16 @@ import java.io.*;
 
 
 /* Contents
-1). Reverse Capitalization
-2). Search Int Array
-3). Maximum Int value in Array
-4). Sum an Int Array
-5). Sum only even in an Int Array
-6). Return true if every elemement in array is odd
-7). Takes an int array and turns it into a string
-8). Reverse a String Array
-9). 
+1).  Reverse Capitalization
+2).  Search Int Array
+3).  Maximum Int value in Array
+4).  Sum an Int Array
+5).  Sum only even in an Int Array
+6).  Return true if every elemement in array is odd
+7).  Takes an int array and turns it into a string
+8).  Reverse a String Array
+9).  Move A String array up 1 EX: [1][2][3] ---> [3][1][2]
+10). Streak Finder (Finds the largest streak of same numbers in a row)
 
 
 */
@@ -87,7 +88,7 @@ public class RandomButPossiblyUseful
       int index = 0; // will hold value of index of largest number
     
     
-      for(int i = 1 ; i < arr.length ; i++) //Probably the first time in my life I have ever started an i at 1
+      for(int i = 1 ; i < arr.length ; i++) //Probably the first time in my life I have ever started an i at 1  UPDATE: I have now been starting 'i' at one and a few other places, I was wrong
       {
          if(temp < arr[i])
          {
@@ -199,14 +200,62 @@ public class RandomButPossiblyUseful
    }
 
    // 9).----------------------------------------------------
+   
+   public String[] moveUp(String[] arr) //Returns a string array "moved up" I.e. Every item in the array is moved forward 1
+   {
+    
+      String[] holdTwo = new String[arr.length];
+      String hold = arr[arr.length-1];
+    
+      for(int i = 1; i < arr.length; i++ )
+      {
+         holdTwo[i] = arr[i-1];
+      }
+        
+      holdTwo[0] = hold;
+    
+      return holdTwo;
+   }
+    
+   // 10).---------------------------------------------------
+   
+   public int streak(String[] arr) //Takes a string and finds the larges "Streak" EX: ['b','a','a','a','t'] Would be 3 as there are 3 a's in a row, they must be together.
+   {
+      int streak = 1;
+      int final_streak = 0;
+    
+      for(int i = 1; i < arr.length; i++)
+      {
+         if( arr[i].equals(arr[i-1]))
+         {
+            streak++;
+         }
+         else
+         {
+            streak = 1;
+         }
+        
+         if(final_streak < streak)
+         {
+            final_streak = streak;
+         }
+      }
+      return final_streak;
+   }
+   
+   // 11).---------------------------------------------------
+   
+   
 
-
-
-
-
-
-
+    
 }
+
+
+
+
+
+
+
 
 
 
