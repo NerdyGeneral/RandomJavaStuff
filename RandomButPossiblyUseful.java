@@ -6,12 +6,14 @@
 
 
 import java.io.*;
+import java.util.ArrayList;
 
 
 
 
 /* Contents
 1).  Reverse Capitalization
+---Array---
 2).  Search Int Array
 3).  Maximum Int value in Array
 4).  Sum an Int Array
@@ -21,6 +23,9 @@ import java.io.*;
 8).  Reverse a String Array
 9).  Move A String array up 1 EX: [1][2][3] ---> [3][1][2]
 10). Streak Finder (Finds the largest streak of same numbers in a row)
+---ArrayList---
+11). Words that Start with a specified Letter, Returning ArrayList
+12). More 1's or 0's returns t (if more ones) or f
 
 
 */
@@ -245,7 +250,59 @@ public class RandomButPossiblyUseful
    
    // 11).---------------------------------------------------
    
-   
+   public ArrayList<String> wordsThatStartWith(ArrayList<String> words, String letter) //Searches for words that start with a specific letter Returns an ARRAYLIST
+   {
+    
+      ArrayList<String> finalList = new ArrayList<String>();
+    
+      String hold = "";
+      for(int i = 0; i < words.size(); i++)
+      {
+         
+         if(words.get(i).indexOf(letter) == 0)
+         {
+            finalList.add(words.get(i));
+         }
+        
+      }
+      
+      return finalList;
+   }
+
+   // 12).---------------------------------------------------
+  
+   public boolean more1s(ArrayList<Integer> numbers) //Will go through an ArrayList and see if it has more 0's or 1's, Returning false if the arraylist consists more of 0's and 'true' if it contains more 1's
+   {
+    
+      int zero = 0;
+      int one = 0;
+    
+      for(int i = 0 ; i < numbers.size() ; i++ )
+      {
+         if(numbers.get(i) == 0)
+         {
+            zero++;
+         }
+        
+         if(numbers.get(i) == 1)
+         {
+            one++;
+         }
+        
+      }
+    
+      if(one > zero)
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }
+    
+   }
+
+   // 13).---------------------------------------------------
 
     
 }
