@@ -26,7 +26,7 @@ import java.util.ArrayList;
 ---ArrayList---
 11). Words that Start with a specified Letter, Returning ArrayList
 12). More 1's or 0's returns t (if more ones) or f
-
+13). Maxmimum range of an ArrayList
 
 */
 
@@ -303,6 +303,34 @@ public class RandomButPossiblyUseful
    }
 
    // 13).---------------------------------------------------
+   
+   public int maxRange(ArrayList<Integer> arr) //Maximum range of an ArrayList Int, taking largest and smallest and subtracting them.
+   {
+      int max = arr.get(0);
+      int min = arr.get(0);
+    
+      for(int i = 0; i < arr.size(); i++)
+      {
+         if( max < arr.get(i))
+         {
+            max = arr.get(i);
+         }
+      }
+    
+      for(int k = 0; k < arr.size(); k++)
+      {
+        
+         if(min > arr.get(k))
+         {
+            min = arr.get(k);
+         }
+      }
+    
+      return Math.abs(max-min);
+    }
+
+   // 14).---------------------------------------------------
+
 
     
 }
